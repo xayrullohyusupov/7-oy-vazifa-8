@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Delete Info</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Delete Info</h1>
+        <p>Are you sure you want to delete "{{ info.name }}"?</p>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Yes</button>
+            <a href="{% url 'info_list' %}" class="btn btn-secondary ml-2">No</a>
+        </form>
+    </div>
+</body>
+</html>

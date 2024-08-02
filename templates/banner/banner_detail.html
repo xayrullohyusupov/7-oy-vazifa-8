@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Banner tafsilotlari</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>{{ banner.title }}</h1>
+        <h2>{{ banner.sub_title }}</h2>
+        <img src="{{ banner.img.url }}" alt="{{ banner.title }}" class="img-fluid mb-4">
+        <p>Aktivmi: {{ banner.is_active }}</p>
+        <a href="{% url 'banner_list' %}" class="btn btn-primary">Orqaga qaytish</a>
+    </div>
+</body>
+</html>

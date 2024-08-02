@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Bannerlar ro'yxati</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Bannerlar ro'yxati</h1>
+        <a href="{% url 'banner_create' %}" class="btn btn-primary mb-4">Yangi banner qo'shish</a>
+        <ul class="list-group">
+            {% for banner in banners %}
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <a href="{% url 'banner_detail' banner.id %}">{{ banner.title }}</a>
+                    <div>
+                        <a href="{% url 'banner_update' banner.id %}" class="btn btn-sm btn-secondary mr-2">O'zgartirish</a>
+                        <a href="{% url 'banner_delete' banner.id %}" class="btn btn-sm btn-danger">O'chirish</a>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

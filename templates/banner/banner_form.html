@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Banner formasi</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Banner formasi</h1>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Saqlash</button>
+        </form>
+        <a href="{% url 'banner_list' %}" class="btn btn-secondary mt-3">Orqaga qaytish</a>
+    </div>
+</body>
+</html>

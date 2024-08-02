@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Info List</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Info List</h1>
+        <a href="{% url 'info_create' %}" class="btn btn-primary mb-4">Create New Info</a>
+        <ul class="list-group">
+            {% for info in infos %}
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <a href="{% url 'info_detail' info.id %}">{{ info.name }}</a>
+                    <div>
+                        <a href="{% url 'info_update' info.id %}" class="btn btn-sm btn-secondary mr-2">Update</a>
+                        <a href="{% url 'info_delete' info.id %}" class="btn btn-sm btn-danger">Delete</a>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
